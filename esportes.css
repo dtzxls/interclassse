@@ -1,0 +1,44 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+    padding: 20px;
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+    color: #11235e;
+}
+
+.esporte-conteudo {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.card-em-breve {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    padding: 60px 30px;
+    text-align: center;
+}
+
+.card-em-breve .icone {
+    font-size: 56px;
+    margin-bottom: 12px;
+}
+
+.card-em-breve h2 {
+    color: #11235e;
+    border-bottom: none;
+    margin-top: 0;
+}
+
+.card-em-breve p {
+    color: #64748b;
+    font-size: 17px;
+    line-height: 1.6;
+    max-width: 420px;
+    margin: 0 auto;
+}

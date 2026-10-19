@@ -1,0 +1,101 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+    padding: 20px;
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+    color: #11235e;
+}
+
+#conteudo-artilheiros {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.lista-artilheiros {
+    overflow: hidden;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.lista-cabecalho,
+.artilheiro-item {
+    display: grid;
+    grid-template-columns: 100px 1fr 100px;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 24px;
+}
+
+.lista-cabecalho {
+    background: #11235e;
+    color: white;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.lista-cabecalho span:last-child,
+.gols {
+    text-align: center;
+}
+
+.artilheiro-item {
+    border-bottom: 1px solid #e5e7eb;
+    font-size: 18px;
+}
+
+.artilheiro-item:last-child {
+    border-bottom: 0;
+}
+
+.artilheiro-item.destaque {
+    background: #f0fdf4;
+}
+
+.posicao {
+    color: #64748b;
+    font-weight: 700;
+}
+
+.destaque .posicao,
+.destaque .gols {
+    color: #10b981;
+}
+
+.nome {
+    font-weight: 700;
+}
+
+.gols {
+    font-size: 22px;
+    font-weight: 800;
+    color: #11235e;
+}
+
+.loading {
+    text-align: center;
+    font-size: 18px;
+    color: #666;
+    margin: 40px;
+}
+
+@media screen and (max-width: 600px) {
+    body { padding: 16px 10px; }
+
+    h1 { font-size: 24px; }
+
+    .lista-cabecalho,
+    .artilheiro-item {
+        grid-template-columns: 68px 1fr 64px;
+        padding: 14px 12px;
+        gap: 8px;
+    }
+
+    .artilheiro-item { font-size: 16px; }
+}

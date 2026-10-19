@@ -1,0 +1,192 @@
+/* ===== Navegação lateral estilo hambúrguer ===== */
+
+#menu-toggle {
+    display: none;
+}
+
+/* Botão hambúrguer (fica fixo no canto superior esquerdo) */
+.meu-btn {
+    display: flex;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 32px;
+    height: 24px;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+.meu-btn span {
+    display: block;
+    width: 100%;
+    height: 4px;
+    background: #11235e;
+    border-radius: 4px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Transforma o hambúrguer em um "X" quando aberto */
+#menu-toggle:checked ~ .meu-btn span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+
+#menu-toggle:checked ~ .meu-btn span:nth-child(2) {
+    opacity: 0;
+}
+
+#menu-toggle:checked ~ .meu-btn span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+/* Fundo escurecido ao redor do menu */
+.menu-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+    z-index: 1040;
+    cursor: pointer;
+}
+
+#menu-toggle:checked ~ .menu-overlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Menu lateral deslizante */
+.menu-mobile {
+    position: fixed;
+    top: 0;
+    left: -280px;
+    width: 280px;
+    height: 100%;
+    background: #11235e;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.25);
+    transition: left 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    z-index: 1050;
+    padding-top: 90px;
+    box-sizing: border-box;
+}
+
+#menu-toggle:checked ~ .menu-mobile {
+    left: 0;
+}
+
+.menu-logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.menu-logo img {
+    max-width: 100px;
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.3));
+}
+
+.menu-mobile ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-mobile li {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Cabeçalhos das seções de esporte (Futebol, Jiu-Jitsu, Vôlei) */
+.menu-mobile .menu-secao {
+    padding: 18px 30px 8px;
+    color: #9db4e8;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+    border-bottom: none;
+}
+
+.menu-mobile .menu-secao:first-child {
+    padding-top: 4px;
+    border-top: none;
+}
+
+/* Links entram em cascata quando o menu abre */
+#menu-toggle:checked ~ .menu-mobile li {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+#menu-toggle:checked ~ .menu-mobile li:nth-child(1) {
+    transition-delay: 0.07s;
+}
+
+#menu-toggle:checked ~ .menu-mobile li:nth-child(2) {
+    transition-delay: 0.14s;
+}
+
+#menu-toggle:checked ~ .menu-mobile li:nth-child(3) {
+    transition-delay: 0.21s;
+}
+
+#menu-toggle:checked ~ .menu-mobile li:nth-child(4) {
+    transition-delay: 0.28s;
+}
+
+#menu-toggle:checked ~ .menu-mobile li:nth-child(5) {
+    transition-delay: 0.35s;
+}
+
+#menu-toggle:checked ~ .menu-mobile li:nth-child(6) {
+    transition-delay: 0.42s;
+}
+
+#menu-toggle:checked ~ .menu-mobile li:nth-child(7) {
+    transition-delay: 0.49s;
+}
+
+#menu-toggle:checked ~ .menu-mobile li:nth-child(8) {
+    transition-delay: 0.56s;
+}
+
+#menu-toggle:checked ~ .menu-mobile li:nth-child(9) {
+    transition-delay: 0.63s;
+}
+
+.menu-mobile a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 18px 30px;
+    transition: background 0.3s ease, padding-left 0.3s ease;
+}
+
+.menu-mobile a:hover {
+    background: #6235bc;
+    padding-left: 38px;
+}
+
+/* Link da página atual em destaque */
+.menu-mobile a[aria-current="page"] {
+    background: #6235bc;
+}
+
+/* Ajustes para telas menores */
+@media screen and (max-width: 650px) {
+    .meu-btn {
+        top: 15px;
+        left: 15px;
+    }
+
+    .menu-mobile {
+        width: 250px;
+        left: -250px;
+    }
+}

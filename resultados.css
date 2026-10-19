@@ -1,0 +1,163 @@
+body { 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    background-color: #f4f6f9; 
+    color: #333; 
+    padding: 20px; 
+    margin: 0;
+}
+
+h1 { 
+    text-align: center; 
+    color: #1e3a8a; 
+}
+
+/* Container que alinha os cards lado a lado automaticamente */
+.grid-resultados {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Visual de cada Placar */
+.card-placar {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-left: 5px solid #10b981;
+    box-sizing: border-box;
+}
+
+/* Grid com 2 linhas: (nome/placar/nome) e (artilheiros/placar-f/artilheiros) */
+.confronto {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    grid-template-areas:
+        "venc placar perd"
+        "artv placarf artp";
+    align-items: center;
+    width: 100%;
+    margin: 10px 0;
+    column-gap: 10px;
+    row-gap: 6px;
+}
+
+.time-box {
+    font-weight: bold;
+    min-width: 0; /* permite encolher dentro do grid sem forçar quebra estranha */
+}
+
+.time-vencedor {
+    grid-area: venc;
+    justify-self: end;
+    text-align: right;
+    color: #10b981;
+    font-size: clamp(16px, 5vw, 26px); /* reduz automaticamente se não couber */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.time-perdedor {
+    grid-area: perd;
+    justify-self: start;
+    text-align: left;
+    color: #4b5563;
+    font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.placar-numeros {
+    grid-area: placar;
+    justify-self: center;
+    background: #f3f4f6;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #111827;
+    white-space: nowrap;
+}
+
+.placar-f {
+    grid-area: placarf;
+    justify-self: center;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #111827;
+    white-space: nowrap;
+}
+
+/* Rótulo "Faltas" dentro do placar-f */
+.rotulo-f {
+    display: block;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #6b7280;
+    margin-bottom: 2px;
+}
+
+.tabelaart-vencedor {
+    grid-area: artv;
+    justify-self: end;
+    text-align: right;
+    color: green;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.tabelaart-perdedor {
+    grid-area: artp;
+    justify-self: start;
+    text-align: left;
+    font-size: 14px;
+    color: #4b5563;
+    font-weight: bold;
+}
+
+.status-partida {
+    font-size: 12px;
+    color: #767c86;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+.loading { 
+    text-align: center; 
+    font-size: 18px; 
+    color: #666; 
+    margin: 40px; 
+    width: 100%;
+}
+
+/* Navegação (hambúrguer e menu lateral) fica em menu.css */
+
+/* Cor do nome segue o resultado real (Time 1 à esquerda, Time 2 à direita) */
+.time-box.venceu {
+    color: #10b981;
+    font-size: clamp(16px, 5vw, 26px);
+}
+
+.time-box.perdeu {
+    color: #4b5563;
+    font-size: 16px;
+}
+
+.time-box.empate {
+    color: #111827;
+}

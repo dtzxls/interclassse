@@ -1,0 +1,428 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin: 20px 0 40px;
+    font-size: 32px;
+}
+
+.form-cadastro {
+    width: 100%;
+    max-width: 750px;
+    margin: 0 auto 35px;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    border-top: 5px solid #1e3a8a;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: 0.2s;
+}
+
+.form-cadastro:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 18px rgba(0, 0, 0, 0.08);
+}
+
+.form-cadastro h2 {
+    color: #1e3a8a;
+    margin: 0 0 25px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #d1d5db;
+    font-size: 22px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 18px;
+}
+
+.campo-duplo {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.campo-duplo .campo {
+    flex: 1;
+}
+
+.campo label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 7px;
+}
+
+.campo input {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 15px;
+    color: #1f2937;
+    background: #f9fafb;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.2s;
+}
+
+.campo input:focus {
+    background: white;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.campo input::placeholder {
+    color: #9ca3af;
+}
+
+input[type="date"],
+input[type="time"] {
+    cursor: pointer;
+}
+
+.form-cadastro button {
+    width: 100%;
+    margin-top: 10px;
+    padding: 13px 20px;
+    background: #11235e;
+    color: white;
+    border: 2px solid #0b163d;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.form-cadastro button:hover {
+    background: #6235bc;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(98, 53, 188, 0.25);
+}
+
+.form-cadastro button:active {
+    transform: scale(0.98);
+}
+
+#mensagem-cadastro,
+#mensagem-proximo-jogo,
+#mensagem-time,
+#mensagem-grupo {
+    text-align: center;
+    margin-top: 15px;
+    min-height: 20px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.sucesso {
+    color: #059669;
+    background: #ecfdf5;
+    border: 1px solid #a7f3d0;
+    padding: 10px;
+    border-radius: 7px;
+}
+
+.erro {
+    color: #dc2626;
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    padding: 10px;
+    border-radius: 7px;
+}
+
+body > h2 {
+    text-align: center;
+    color: #1e3a8a;
+    max-width: 1200px;
+    margin: 50px auto 25px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #1e3a8a;
+}
+
+#conteudo-resultados {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 50px;
+}
+
+.grid-resultados {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 20px;
+    width: 100%;
+}
+
+.card-placar {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-left: 5px solid #10b981;
+}
+
+.confronto {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    grid-template-areas:
+        "venc placar perd"
+        "artv placarf artp";
+    align-items: center;
+    width: 100%;
+    margin: 10px 0;
+    gap: 6px 10px;
+}
+
+.time-box {
+    font-weight: bold;
+    min-width: 0;
+}
+
+.time-vencedor {
+    grid-area: venc;
+    justify-self: end;
+    text-align: right;
+    color: #10b981;
+    font-size: 18px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.time-perdedor {
+    grid-area: perd;
+    justify-self: start;
+    text-align: left;
+    color: #4b5563;
+    font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.placar-numeros {
+    grid-area: placar;
+    background: #f3f4f6;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #111827;
+    white-space: nowrap;
+}
+
+.placar-f {
+    grid-area: placarf;
+    justify-self: center;
+    padding: 5px 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #111827;
+}
+
+/* Rótulo "Faltas" dentro do placar-f */
+.rotulo-f {
+    display: block;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #6b7280;
+    margin-bottom: 2px;
+}
+
+.tabelaart-vencedor {
+    grid-area: artv;
+    justify-self: end;
+    text-align: right;
+    color: #059669;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.tabelaart-perdedor {
+    grid-area: artp;
+    justify-self: start;
+    text-align: left;
+    color: #4b5563;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.status-partida {
+    margin-top: 8px;
+    font-size: 12px;
+    color: #767c86;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.loading {
+    text-align: center;
+    font-size: 18px;
+    color: #666;
+    margin: 40px;
+    width: 100%;
+}
+
+@media (max-width: 650px) {
+    body {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 26px;
+        margin-bottom: 30px;
+    }
+
+    .form-cadastro {
+        padding: 20px 16px;
+    }
+
+    .form-cadastro h2 {
+        font-size: 19px;
+    }
+
+    .campo-duplo {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .campo input {
+        font-size: 16px;
+    }
+
+    .form-cadastro button {
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    .grid-resultados {
+        grid-template-columns: 1fr;
+    }
+
+    .card-placar {
+        padding: 15px 10px;
+    }
+
+    .confronto {
+        column-gap: 5px;
+    }
+
+    .time-vencedor,
+    .time-perdedor,
+    .time-box.venceu,
+    .time-box.perdeu {
+        font-size: 14px;
+    }
+
+    .placar-numeros {
+        padding: 7px 10px;
+        font-size: 17px;
+        letter-spacing: 2px;
+    }
+}
+.campo select {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 15px;
+    color: #1f2937;
+    background: #f9fafb;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    outline: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.campo select:focus {
+    background: white;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+#mensagem-jogador {
+    text-align: center;
+    margin-top: 15px;
+    min-height: 20px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#mensagem-mata-mata-gerar,
+#mensagem-mata-mata-avancar,
+.mm-msg {
+    text-align: center;
+    margin-top: 15px;
+    min-height: 20px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#conteudo-mata-mata-admin {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 50px;
+}
+
+#conteudo-mata-mata-admin .card-placar {
+    align-items: stretch;
+    text-align: left;
+}
+
+#conteudo-mata-mata-admin .card-placar > strong {
+    text-align: center;
+    display: block;
+    color: #1e3a8a;
+}
+
+/* Dica de empate no formulário de resultado */
+.dica-empate {
+    font-size: 13px;
+    color: #6b7280;
+    margin: 0 0 15px;
+}
+
+/* Cor do placar segue o resultado real de cada lado */
+.time-box.venceu {
+    color: #10b981;
+    font-size: 18px;
+}
+
+.time-box.perdeu {
+    color: #4b5563;
+    font-size: 16px;
+}
+
+.time-box.empate {
+    color: #111827;
+}
+
+/* Mobile: mantém os nomes do placar pequenos mesmo com as cores acima */
+@media (max-width: 650px) {
+    .time-box.venceu {
+        font-size: 14px;
+    }
+
+    .time-box.perdeu {
+        font-size: 14px;
+    }
+}

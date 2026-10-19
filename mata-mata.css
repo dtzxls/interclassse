@@ -1,0 +1,217 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+    padding: 20px;
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+    color: #1e3a8a;
+}
+
+header img {
+    max-height: 90px;
+}
+
+.subtitulo {
+    text-align: center;
+    color: #6b7280;
+    margin: -10px 0 30px;
+    font-size: 15px;
+}
+
+.loading {
+    text-align: center;
+    font-size: 18px;
+    color: #666;
+    margin: 40px;
+}
+
+/* ===== CHAVE DO MATA-MATA ===== */
+.chave-container {
+    display: flex;
+    gap: 24px;
+    align-items: stretch;
+    justify-content: flex-start;
+    overflow-x: auto;
+    max-width: 1400px;
+    margin: 0 auto 40px;
+    padding: 10px 4px 20px;
+}
+
+.fase-coluna {
+    flex: 1 0 260px;
+    min-width: 260px;
+    max-width: 340px;
+    display: flex;
+    flex-direction: column;
+}
+
+.fase-titulo {
+    text-align: center;
+    background: #11235e;
+    color: #fff;
+    border-radius: 10px 10px 0 0;
+    padding: 12px 8px;
+    font-size: 15px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.fase-jogos {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-top: none;
+    border-radius: 0 0 10px 10px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    justify-content: space-around;
+    flex: 1;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.jogo-chave {
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #f9fafb;
+    position: relative;
+}
+
+.jogo-chave::after {
+    content: "";
+    position: absolute;
+    right: -24px;
+    top: 50%;
+    width: 24px;
+    height: 2px;
+    background: #c7d2fe;
+}
+
+.fase-coluna:last-child .jogo-chave::after {
+    display: none;
+}
+
+.jogo-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #6b7280;
+    background: #eef2ff;
+}
+
+.status {
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+}
+
+.status-agendado { background: #fef3c7; color: #92400e; }
+.status-andamento { background: #dbeafe; color: #1d4ed8; }
+.status-finalizado { background: #d1fae5; color: #065f46; }
+
+.time-linha {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 12px;
+    background: #fff;
+    font-weight: 600;
+    font-size: 15px;
+    gap: 8px;
+}
+
+.time-linha + .time-linha {
+    border-top: 1px solid #e5e7eb;
+}
+
+.time-linha .nome {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.time-linha .gols {
+    background: #11235e;
+    color: #fff;
+    min-width: 30px;
+    height: 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-weight: 800;
+    padding: 0 8px;
+}
+
+.time-linha.vencedor {
+    background: #ecfdf5;
+}
+
+.time-linha.vencedor .nome::after {
+    content: " ✓";
+    color: #059669;
+    font-weight: 800;
+}
+
+.time-linha.a-definir .nome {
+    color: #9ca3af;
+    font-style: italic;
+}
+
+.jogo-rodape {
+    padding: 8px 12px;
+    font-size: 12px;
+    color: #6b7280;
+    background: #fff;
+    border-top: 1px dashed #e5e7eb;
+    text-align: center;
+}
+
+.sem-jogos {
+    text-align: center;
+    color: #9ca3af;
+    font-size: 14px;
+    padding: 10px;
+}
+
+.campeao-banner {
+    max-width: 1400px;
+    margin: 0 auto 24px;
+    background: linear-gradient(135deg, #11235e, #6235bc);
+    color: #fff;
+    border-radius: 12px;
+    padding: 18px 20px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 800;
+    box-shadow: 0 6px 16px rgba(17, 35, 94, 0.25);
+}
+
+@media (max-width: 800px) {
+    .chave-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .fase-coluna {
+        max-width: none;
+    }
+
+    .jogo-chave::after {
+        display: none;
+    }
+}

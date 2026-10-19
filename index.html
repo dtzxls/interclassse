@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela do Campeonato - Tempo Real</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+    <input type="checkbox" id="menu-toggle">
+
+    <label for="menu-toggle" class="meu-btn" aria-label="Abrir ou fechar menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+
+    <label for="menu-toggle" class="menu-overlay"></label>
+
+    <div class="menu-mobile">
+        <div class="menu-logo">
+            <img src="agv logo.png" alt="logo">
+        </div>
+        <ul>
+            <li class="menu-secao">Futebol</li>
+            <li><a href="index.html" aria-current="page">Tabela</a></li>
+            <li><a href="proximo.html">Próximos Jogos</a></li>
+            <li><a href="resultados.html">Resultados</a></li>
+            <li><a href="artilheiros.html">Artilheiros</a></li>
+            <li><a href="mata-mata.html">Mata-Mata</a></li>
+            <li class="menu-secao">Jiu-Jitsu</li>
+            <li><a href="jiujitsu.html">Em breve</a></li>
+            <li class="menu-secao">Vôlei</li>
+            <li><a href="volei.html">Em breve</a></li>
+        </ul>
+    </div>
+
+    <header>
+        <h1><img src="agv logo.png" alt="logo"></h1>
+        <h1>Classificação do Campeonato</h1>
+    </header>
+
+    <div id="campeonato-conteudo">
+        <div class="loading">
+            Carregando tabelas e atualizando pontos...
+        </div>
+    </div>
+    <div id="modal-jogadores" class="modal">
+    <div class="modal-conteudo">
+        <span class="modal-fechar" onclick="fecharModal()">&times;</span>
+        <h2 id="modal-titulo"></h2>
+        <div id="modal-corpo"></div>
+    </div>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase client.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

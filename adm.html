@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Interclasse</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="stylesheet" href="adm.css">
+</head>
+<body>
+
+<h1>Área de Admin</h1>
+
+<form id="form-cadastro" class="form-cadastro">
+    <h2>Cadastrar resultado</h2>
+
+    <div class="campo-duplo">
+        <div class="campo">
+            <label for="time1">Time 1</label>
+            <select id="time1" required>
+                <option value="">Selecione o time</option>
+            </select>
+        </div>
+
+        <div class="campo">
+            <label for="time2">Time 2</label>
+            <select id="time2" required>
+                <option value="">Selecione o time</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="campo-duplo">
+        <div class="campo">
+            <label for="gols_time1">Gols do Time 1</label>
+            <input type="number" id="gols_time1" min="0" required>
+        </div>
+
+        <div class="campo">
+            <label for="gols_time2">Gols do Time 2</label>
+            <input type="number" id="gols_time2" min="0" required>
+        </div>
+    </div>
+
+    <div class="campo-duplo">
+        <div class="campo">
+            <label for="gols_time1_f">Faltas do Time 1</label>
+            <input type="number" id="gols_time1_f" min="0">
+        </div>
+
+        <div class="campo">
+            <label for="gols_time2_f">Faltas do Time 2</label>
+            <input type="number" id="gols_time2_f" min="0">
+        </div>
+    </div>
+
+    <div class="campo-duplo">
+        <div class="campo">
+            <label for="gol1">Artilheiro 1 - Time 1</label>
+            <select id="gol1">
+                <option value="">Selecione o jogador</option>
+            </select>
+        </div>
+
+        <div class="campo">
+            <label for="gol2">Artilheiro 2 - Time 1</label>
+            <select id="gol2">
+                <option value="">Selecione o jogador</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="campo-duplo">
+        <div class="campo">
+            <label for="gol3">Artilheiro 1 - Time 2</label>
+            <select id="gol3">
+                <option value="">Selecione o jogador</option>
+            </select>
+        </div>
+
+        <div class="campo">
+            <label for="gol4">Artilheiro 2 - Time 2</label>
+            <select id="gol4">
+                <option value="">Selecione o jogador</option>
+            </select>
+        </div>
+    </div>
+
+    <p class="dica-empate">Gols iguais para os dois times = empate (1 ponto para cada).</p>
+
+    <button type="submit">Cadastrar resultado</button>
+    <div id="mensagem-cadastro"></div>
+</form>
+
+<form id="form-proximo-jogo" class="form-cadastro">
+    <h2>Cadastrar próximo jogo</h2>
+
+    <div class="campo-duplo">
+        <div class="campo">
+            <label for="proximo_time1">Time 1</label>
+            <select id="proximo_time1" required>
+                <option value="">Selecione o time</option>
+            </select>
+        </div>
+
+        <div class="campo">
+            <label for="proximo_time2">Time 2</label>
+            <select id="proximo_time2" required>
+                <option value="">Selecione o time</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="campo-duplo">
+        <div class="campo">
+            <label for="proximo_data">Data</label>
+            <input type="date" id="proximo_data" required>
+        </div>
+
+        <div class="campo">
+            <label for="proximo_hora">Horário</label>
+            <input type="time" id="proximo_hora" required>
+        </div>
+    </div>
+
+    <div class="campo">
+        <label for="proximo_local">Local</label>
+        <input type="text" id="proximo_local" required>
+    </div>
+
+    <button type="submit">Cadastrar próximo jogo</button>
+    <div id="mensagem-proximo-jogo"></div>
+</form>
+
+<form id="form-time" class="form-cadastro">
+    <h2>Cadastrar time</h2>
+
+    <div class="campo-duplo">
+        <div class="campo">
+            <label for="novo_time_nome">Nome do time</label>
+            <input type="text" id="novo_time_nome" required>
+        </div>
+
+        <div class="campo">
+            <label for="novo_time_grupo">Grupo</label>
+            <select id="novo_time_grupo" required>
+                <option value="Grupo 1">Grupo 1</option>
+                <option value="Grupo 2">Grupo 2</option>
+                <option value="Grupo 3">Grupo 3</option>
+                <option value="Grupo 4">Grupo 4</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="campo-duplo">
+        <div class="campo">
+            <label for="pos_goleiro">Goleiro</label>
+            <input type="text" id="pos_goleiro">
+        </div>
+
+        <div class="campo">
+            <label for="pos_fixo">Fixo</label>
+            <input type="text" id="pos_fixo">
+        </div>
+    </div>
+
+    <div class="campo-duplo">
+        <div class="campo">
+            <label for="pos_ala_direito">Ala direito</label>
+            <input type="text" id="pos_ala_direito">
+        </div>
+
+        <div class="campo">
+            <label for="pos_ala_esquerdo">Ala esquerdo</label>
+            <input type="text" id="pos_ala_esquerdo">
+        </div>
+    </div>
+
+    <div class="campo-duplo">
+        <div class="campo">
+            <label for="pos_pivo">Pivô</label>
+            <input type="text" id="pos_pivo">
+        </div>
+
+        <div class="campo">
+            <label for="pos_reserva1">Reserva 1</label>
+            <input type="text" id="pos_reserva1">
+        </div>
+    </div>
+
+    <div class="campo-duplo">
+        <div class="campo">
+            <label for="pos_reserva2">Reserva 2</label>
+            <input type="text" id="pos_reserva2">
+        </div>
+
+        <div class="campo">
+            <label for="pos_reserva3">Reserva 3</label>
+            <input type="text" id="pos_reserva3">
+        </div>
+    </div>
+
+    <div class="campo-duplo">
+        <div class="campo">
+            <label for="pos_reserva4">Reserva 4</label>
+            <input type="text" id="pos_reserva4">
+        </div>
+
+        <div class="campo">
+            <label for="pos_reserva5">Reserva 5</label>
+            <input type="text" id="pos_reserva5">
+        </div>
+    </div>
+
+    <p class="dica-empate">Campos vazios podem ser preenchidos depois no formulário "Adicionar jogador".</p>
+
+    <button type="submit">Cadastrar time</button>
+    <div id="mensagem-time"></div>
+</form>
+
+<form id="form-grupo" class="form-cadastro">
+    <h2>Atualizar grupo do time</h2>
+
+    <div class="campo-duplo">
+        <div class="campo">
+            <label for="grupo_time">Time</label>
+            <select id="grupo_time" required>
+                <option value="">Selecione o time</option>
+            </select>
+        </div>
+
+        <div class="campo">
+            <label for="grupo_novo">Grupo</label>
+            <select id="grupo_novo" required>
+                <option value="Grupo 1">Grupo 1</option>
+                <option value="Grupo 2">Grupo 2</option>
+                <option value="Grupo 3">Grupo 3</option>
+                <option value="Grupo 4">Grupo 4</option>
+            </select>
+        </div>
+    </div>
+
+    <button type="submit">Atualizar grupo</button>
+    <div id="mensagem-grupo"></div>
+</form>
+
+<form id="form-jogador" class="form-cadastro">
+    <h2>Adicionar jogador</h2>
+
+    <div class="campo">
+        <label for="nome_jogador">Nome do jogador</label>
+        <input type="text" id="nome_jogador" required>
+    </div>
+
+    <div class="campo-duplo">
+        <div class="campo">
+            <label for="time_jogador">Time</label>
+            <select id="time_jogador" required>
+                <option value="">Selecione o time</option>
+            </select>
+        </div>
+
+        <div class="campo">
+            <label for="posicao_jogador">Posição</label>
+            <select id="posicao_jogador" required>
+                <option value="">Selecione a posição</option>
+                <option value="goleiro">Goleiro</option>
+                <option value="fixo">Fixo</option>
+                <option value="ala_direito">Ala direito</option>
+                <option value="ala_esquerdo">Ala esquerdo</option>
+                <option value="pivo">Pivô</option>
+                <option value="reserva1">Reserva 1</option>
+                <option value="reserva2">Reserva 2</option>
+                <option value="reserva3">Reserva 3</option>
+                <option value="reserva4">Reserva 4</option>
+                <option value="reserva5">Reserva 5</option>
+            </select>
+        </div>
+    </div>
+
+    <button type="submit">Adicionar jogador</button>
+    <div id="mensagem-jogador"></div>
+</form>
+
+<h2>Jogos cadastrados</h2>
+<div id="conteudo-resultados"></div>
+
+<form id="form-mata-mata-gerar" class="form-cadastro">
+    <h2>Gerar chave do mata-mata (automático)</h2>
+
+    <div class="campo-duplo">
+        <div class="campo">
+            <label for="mm_qtd">Tamanho da chave</label>
+            <select id="mm_qtd" required>
+                <option value="2">Final (2 times)</option>
+                <option value="4" selected>Semifinal (4 times)</option>
+                <option value="8">Quartas de final (8 times)</option>
+                <option value="16">Oitavas de final (16 times)</option>
+            </select>
+        </div>
+
+        <div class="campo">
+            <label for="mm_origem">Quais times entram?</label>
+            <select id="mm_origem" required>
+                <option value="classificacao">Pela classificação atual</option>
+                <option value="todos">Todos os cadastrados (A-Z)</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="campo-duplo">
+        <div class="campo">
+            <label style="flex-direction:row;display:flex;gap:8px;align-items:center">
+                <input type="checkbox" id="mm_sortear" checked style="width:auto"> Sortear confrontos
+            </label>
+            <label style="flex-direction:row;display:flex;gap:8px;align-items:center">
+                <input type="checkbox" id="mm_mesclar_grupos" checked style="width:auto"> Misturar grupos na 1ª fase
+            </label>
+            <label style="flex-direction:row;display:flex;gap:8px;align-items:center">
+                <input type="checkbox" id="mm_limpar" checked style="width:auto"> Apagar chave antiga antes de gerar
+            </label>
+        </div>
+    </div>
+
+    <p class="dica-empate">Gera Quartas/Semi/Final já com os jogos da 1ª fase preenchidos. O resto fica "A definir".</p>
+
+    <button type="submit">Gerar chave automaticamente</button>
+    <div id="mensagem-mata-mata-gerar"></div>
+</form>
+
+<form id="form-mata-mata-avancar" class="form-cadastro" onsubmit="return false;">
+    <h2>Avançar vencedores</h2>
+    <p class="dica-empate">Finalize os jogos (placar + status Finalizado) e clique para levar os vencedores à próxima fase. Empates precisam ser decididos manualmente na lista abaixo.</p>
+    <button type="button" id="btn-avancar-vencedores">Avançar vencedores p/ próxima fase</button>
+    <button type="button" id="btn-limpar-mata-mata" style="margin-top:8px;background:#991b1b;border-color:#7f1d1d">Apagar chave inteira</button>
+    <div id="mensagem-mata-mata-avancar"></div>
+</form>
+
+<h2>Editar mata-mata (jogo a jogo)</h2>
+<div id="conteudo-mata-mata-admin"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase client.js"></script>
+<script src="resultados.js"></script>
+<script src="admin.js"></script>
+<script src="mata-mata-admin-final.js"></script>
+
+</body>
+</html>
